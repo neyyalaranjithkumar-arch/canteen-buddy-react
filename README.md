@@ -1,73 +1,171 @@
-# Welcome to your Lovable project
+# Smart Canteen Ordering System
 
-## Project info
+A modern, responsive React-based food ordering system for canteens with comprehensive admin management capabilities.
 
-**URL**: https://lovable.dev/projects/03521b17-09f7-4f31-abfa-a3a1e836e2f7
+## 🚀 Features
 
-## How can I edit this code?
+### User Features
+- **Beautiful Homepage** with hero section and featured items
+- **User Authentication** with secure login/logout
+- **Interactive Menu** with categories (Breakfast, Lunch, Snacks, Beverages)
+- **Shopping Cart** with quantity management
+- **Order Tracking** with real-time status updates
+- **User Profile** with order history and account management
+- **Responsive Design** optimized for all devices
+- **Dark Mode Support** with elegant transitions
 
-There are several ways of editing your application.
+### Admin Features
+- **Admin Dashboard** with comprehensive analytics
+- **Menu Management** - Add, edit, delete, and toggle availability
+- **Order Management** - View and update order statuses
+- **Real-time Statistics** - Orders, revenue, and performance metrics
+- **Inventory Control** - Manage item availability
 
-**Use Lovable**
+### Technical Features
+- **React 18** with modern hooks and patterns
+- **TypeScript** for type safety
+- **Tailwind CSS** with custom design system
+- **React Router** for navigation
+- **Axios** for API integration (ready for backend)
+- **Context API** for state management
+- **Toast Notifications** for user feedback
+- **Loading States** and error handling
+- **SEO Optimized** with proper meta tags
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/03521b17-09f7-4f31-abfa-a3a1e836e2f7) and start prompting.
+## 🎨 Design System
 
-Changes made via Lovable will be committed automatically to this repo.
+The app features a cohesive design system with:
+- **Primary Color**: Warm orange (#F97316) - appetite-stimulating
+- **Accent Color**: Fresh green (#16A34A) - healthy and natural
+- **Beautiful Gradients** and shadows
+- **Semantic Color Tokens** for consistent theming
+- **Custom Component Variants** for different use cases
 
-**Use your preferred IDE**
+## 🔐 Demo Credentials
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### User Login
+- **Email**: `user@canteen.com`
+- **Password**: `password`
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Admin Login
+- **Email**: `admin@canteen.com`
+- **Password**: `admin`
 
-Follow these steps:
+## 📁 Project Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── Navbar.tsx      # Navigation component
+│   ├── LoadingSpinner.tsx
+│   └── MenuItemCard.tsx
+├── context/            # React Context providers
+│   ├── AuthContext.tsx # Authentication state
+│   └── CartContext.tsx # Shopping cart state
+├── pages/              # Main application pages
+│   ├── Home.tsx        # Landing page
+│   ├── Login.tsx       # User login
+│   ├── AdminLogin.tsx  # Admin login
+│   ├── Menu.tsx        # Menu browsing
+│   ├── Cart.tsx        # Shopping cart
+│   ├── Orders.tsx      # Order tracking
+│   ├── AdminDashboard.tsx # Admin management
+│   ├── Profile.tsx     # User profile
+│   └── NotFound.tsx    # 404 page
+├── services/           # API integration
+│   └── api.ts          # API client and endpoints
+└── lib/                # Utilities
+    └── utils.ts        # Helper functions
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-**Use GitHub Codespaces**
+2. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
 
-## What technologies are used for this project?
+## 🔌 API Integration
 
-This project is built with:
+The app is designed to work with a REST API. Key endpoints expected:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Authentication
+- `POST /api/auth/login` - User login
+- `POST /api/auth/admin/login` - Admin login
+- `POST /api/auth/register` - User registration
 
-## How can I deploy this project?
+### Menu Management
+- `GET /api/menu` - Get all menu items
+- `POST /api/menu` - Add new menu item (admin)
+- `PUT /api/menu/:id` - Update menu item (admin)
+- `DELETE /api/menu/:id` - Delete menu item (admin)
+- `PATCH /api/menu/:id/availability` - Toggle availability (admin)
 
-Simply open [Lovable](https://lovable.dev/projects/03521b17-09f7-4f31-abfa-a3a1e836e2f7) and click on Share -> Publish.
+### Order Management
+- `POST /api/orders` - Create new order
+- `GET /api/orders/user` - Get user orders
+- `GET /api/orders` - Get all orders (admin)
+- `PATCH /api/orders/:id/status` - Update order status (admin)
 
-## Can I connect a custom domain to my Lovable project?
+### User Management
+- `GET /api/user/profile` - Get user profile
+- `PUT /api/user/profile` - Update user profile
 
-Yes, you can!
+## 🎯 Key Technologies
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Beautiful, accessible components
+- **React Router** - Client-side routing
+- **Axios** - HTTP client for API requests
+- **Lucide React** - Beautiful icons
+- **Sonner** - Toast notifications
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🌟 Notable Features
+
+### State Management
+- **AuthContext** - Manages user/admin authentication state
+- **CartContext** - Handles shopping cart operations with localStorage persistence
+
+### User Experience
+- **Optimistic Updates** - Immediate UI feedback
+- **Error Boundaries** - Graceful error handling
+- **Loading States** - Skeleton loaders and spinners
+- **Toast Notifications** - User feedback for all actions
+
+### Admin Dashboard
+- **Real-time Statistics** - Order metrics and revenue tracking
+- **Menu Management** - Full CRUD operations for menu items
+- **Order Status Management** - Update order workflow
+- **Availability Toggle** - Enable/disable menu items
+
+### Responsive Design
+- **Mobile-first** approach
+- **Tablet optimization** 
+- **Desktop layouts**
+- **Touch-friendly** interactions
+
+## 🚀 Deployment Ready
+
+The application is production-ready with:
+- Optimized build process
+- SEO meta tags
+- Error handling
+- Loading states
+- Type safety
+- Clean code architecture
+
+Ready to deploy to any static hosting service or integrate with your backend API!
